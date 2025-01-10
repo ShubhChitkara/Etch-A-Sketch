@@ -8,8 +8,8 @@ function divCreation(divs) {
         divs.classList.add('items');
         divs.innerHTML = "";
         divs.style.color = "black";
-        divs.style.border = "2px solid white";
-        divs.style.margin = "2px 2px";
+        divs.style.border = "0px solid white";
+        //divs.style.margin = "2px 2px";
         divs.style.height = "10vh";
         divs.style.width = "auto";
         container.appendChild(divs);
