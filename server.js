@@ -1,24 +1,26 @@
-const container = document.querySelector('.container');
-const divNumber = prompt("Enter number of divs in a row");
-const total = divNumber ** 2;
-const divs = document.createElement('div');
-function divCreation(divs) {
-    for (let i = 0; i < total; i++) {
-        const divs = document.createElement('div');
-        divs.classList.add('items');
-        divs.innerHTML = "";
-        divs.style.color = "black";
-        divs.style.border = "0px solid white";
-        //divs.style.margin = "2px 2px";
-        divs.style.height = "10vh";
-        divs.style.width = "auto";
-        container.appendChild(divs);
-        divs.addEventListener("mouseenter", () => {
-            divs.style.backgroundColor = "red";
-        });
-
+const container = document.querySelector(".container");
+const contains = document.querySelector(".contains");
+function divCreation(divNumber) {
+  const dimension = 500 / divNumber;
+  for (let i = 0; i < divNumber*divNumber; i++) {
+      const divs = document.createElement("div");
+      divs.style.border = "0px solid white";
+      divs.style.height = `${dimension}px`;
+      divs.style.width = `${dimension}px`;
+      container.appendChild(divs);
+      divs.addEventListener("mouseenter", () => {
+        divs.style.backgroundColor = "red";
+      });
     }
-}
-divCreation(divs);
-
-
+  }
+divCreation(10);
+const btn = document.createElement("button");
+btn.textContent = "RESET";
+btn.style.color = "black";
+btn.style.border = "2px solid black";
+btn.addEventListener("click", () => {
+  const newNumber = prompt("Enter number of divs in a row");
+  container.innerHTML="";
+  divCreation(newNumber);
+});
+contains.appendChild(btn);
