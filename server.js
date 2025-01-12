@@ -13,7 +13,7 @@ function divCreation(divNumber) {
       });
     }
   }
-divCreation(10);
+divCreation(16);
 const btn = document.createElement("button");
 btn.textContent = "RESET";
 btn.style.color = "black";
